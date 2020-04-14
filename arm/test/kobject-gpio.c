@@ -6,9 +6,10 @@
 #include <linux/gpio.h>
 #include <linux/interrupt.h>
 
+#define led 105
+#define sw   20
+
 static char gpioname[8] = "gpioxxx";
-static unsigned int led = 105;
-static unsigned int sw  = 20;
 static int ledon = 0;
 static unsigned int irqnumber;
 static int numberpress;
@@ -25,8 +26,8 @@ static irqreturn_t gpio_interrupt(int irq, void *dev_id)
 }
 
 static struct gpio leds_gpios[] = {
-	{  20, GPIOF_DIR_IN, "Power SW" },
-	{ 105, GPIOF_DIR_OUT, "Power LED" },
+	{  sw, GPIOF_DIR_IN, "Power SW" },
+	{ led, GPIOF_DIR_OUT, "Power LED" },
 };
 
 static ssize_t led_show(struct kobject *kobj,struct kobj_attribute *attr,char *buf)
@@ -65,7 +66,7 @@ static struct attribute *attrs[] = {
 };
 
 static struct attribute_group attr_group = {
-	.name	= gpioname,
+//	.name	= gpioname,
 	.attrs 	= attrs,
 };
 

@@ -11,9 +11,11 @@
 
 int main(void)
 {
-	int fd,exp = 1,dir = 1,high = 1,low = 0;
-	int gpio = 105,io;
+	printf("yes\n");
+	unsigned int fd;
+	int high = 1,low = 0;
 	sleep(1);
+	printf("1\n");
 
 	fd = open("/dev/ioctl",O_RDWR);
 	if(fd < 0)
@@ -21,12 +23,9 @@ int main(void)
 		perror("open");
 		_exit(1);
 	}
+	printf("2\n");
 	sleep(1);
-	ioctl(fd,set_gpio_assign,&gpio);
-	sleep(1);
-	ioctl(fd,set_gpio_export,&exp);
-	sleep(1);
-	ioctl(fd,set_gpio_direction,&dir);
+	printf("3\n");
 	sleep(1);
 	while(1)
 	{
