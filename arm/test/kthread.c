@@ -138,7 +138,9 @@ static int __init start(void)
 
 static void __exit stop(void)
 {
+/***********************************************KTHREAD*****************************************/
 	kthread_stop(task);
+/**********************************************************************************************/
 	gpio_unexport(led);
 	gpio_free(led);
 	kobject_put(Home_Automation);

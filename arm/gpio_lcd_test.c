@@ -9,13 +9,21 @@
 #define LCD_FIRST_LINE		1
 #define LCD_SECOND_LINE		2
 
-#define LCD_RS_PIN_NUMBER	83  
+/*#define LCD_RS_PIN_NUMBER	83  
 #define LCD_E_PIN_NUMBER	7   
 
 #define LCD_DB4_PIN_NUMBER	20  
 #define LCD_DB5_PIN_NUMBER	82  
 #define LCD_DB6_PIN_NUMBER	106 
-#define LCD_DB7_PIN_NUMBER	105 
+#define LCD_DB7_PIN_NUMBER	105 */
+
+#define LCD_RS_PIN_NUMBER	47  
+#define LCD_E_PIN_NUMBER	46  
+
+#define LCD_DB4_PIN_NUMBER	45  
+#define LCD_DB5_PIN_NUMBER	44  
+#define LCD_DB6_PIN_NUMBER	27 
+#define LCD_DB7_PIN_NUMBER	26 
 
 static void lcd_instruction(char command);
 static void lcd_data(char data);
